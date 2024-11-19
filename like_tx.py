@@ -97,17 +97,6 @@ def process_transactions(data):
                 })
     
     return transactions
-
-def check_transactions(data,cutoff_date):
-    # トランザクションを抽出
-    # 各トランザクションのタイムスタンプをチェック
-    for transaction in data:
-        timestamp = transaction.get('Timestamp')
-        if timestamp and timestamp < cutoff_date:
-            print("OK")
-            return 
-    print(f"No transactions before {cutoff_date}")
-    
                 
 if __name__ == "__main__": 
     
